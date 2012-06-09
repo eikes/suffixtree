@@ -1,4 +1,6 @@
-var text = document.getElementById("lyrics").innerHTML;
+
+function createCode(){
+var text = document.getElementById("lyrics").value;
 var root, substring, letter, j;
 var usedletters = [];
 var unusedletters = [];
@@ -73,6 +75,12 @@ code =
 
 document.getElementById("code").innerHTML = code.replace(/>/g, "&gt;").replace(/</g, "&lt;");
 document.getElementById("length").innerHTML = code.length;
+}
+
 document.getElementById("eval").onclick = function(){
   document.getElementById("uncompressed").innerHTML = eval(code);
 }
+
+createCode();
+
+document.getElementById("newcode").onclick = createCode;
